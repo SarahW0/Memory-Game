@@ -1,0 +1,368 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: rebeccapurple;
+}
+
+body {
+  background: #ffffff url("../img/geometry2.png"); /* Background pattern from Subtle Patterns */
+  font-family: "Coda", cursive;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/*Display as flex box*/
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*Center the child items of the flex box*/
+.flex-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/*
+ * Container class
+ * - display as flex box with column direction
+ * - horizontally centered on screen
+*/
+.container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+}
+
+header {
+  width: 100%;
+}
+
+.title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+/*Card Style Start-----------------------------------------------*/
+/*
+ * Styles for the deck of cards
+ * - display as flex with centered children
+ * - Linear gradient background
+*/
+.deck {
+  width: 100%;
+  background: -webkit-linear-gradient(290deg, #4270f0 0%, #aa7ecd 100%);
+  background: -o-linear-gradient(290deg, #4270f0 0%, #aa7ecd 100%);
+  background: linear-gradient(160deg, #4270f0 0%, #aa7ecd 100%);
+  padding: 3%;
+  border-radius: 10px;
+  -webkit-box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  margin: 0 0 3em;
+}
+
+/*
+ * Styles for the card
+ * - fixed size
+ * - display as flex with centered children
+ * - show card background image  
+*/
+.card {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 125px;
+  flex: 0 0 125px;
+
+  background-image: url("../img/card-back-crow.jpg");
+  background-size: contain;
+
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+
+  -webkit-box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+
+  -webkit-transition: transform 0.2s, background 0.5s;
+  -o-transition: transform 0.2s, background 0.5s;
+  transition: transform 0.2s, background 0.5s;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  margin: 2%;
+  border: 5px solid rgb(232, 137, 20);
+}
+/*
+ * Style to make a square card
+ */
+.card:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/*
+ * Style for unmatched open card
+ */
+.card.open {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+  font-size: 50px;
+  background: #02b3e4;
+  border: 10px solid white;
+  cursor: default;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#02060f+0,02f7ba+50,02b3e4+100 */
+  background: #02060f; /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #02060f 0%,
+    #02b3e4 100%
+  ); /* FF3.6-15 */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #02060f 0%,
+    #02b3e4 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    #02060f 0%,
+    #02b3e4 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02060f', endColorstr='#02b3e4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/*
+ * Style for matched open card
+ */
+.card.match {
+  cursor: default;
+  /*background: #02ccba;*/
+  color: #f5fd7c;
+  background: #051d55;
+  border: 10px solid white;
+  font-size: 50px;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+/*
+ * Style for the card focused
+ */
+.card:focus {
+  outline: 5px solid red;
+}
+
+/*Card Style End-----------------------------------------------*/
+/*Score Panel Style Start--------------------------------------*/
+/*
+ * Styles for the Score Panel
+*/
+.score-panel {
+  text-align: center;
+  width: 95%;
+
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/*time passed*/
+.time-lapse {
+  width: 80px;
+}
+/*Score Panel Style End--------------------------------------*/
+/*Score Panel and Result Panel Style Start-------------------*/
+/*Moves and Star*/
+.stars,
+.stars li {
+  display: inline-block;
+}
+.stars {
+  margin: 0;
+  padding: 0;
+  margin: 0 5px 0 0;
+}
+
+.stars li {
+  list-style: none;
+}
+
+/*restart button*/
+.restart i {
+  padding-right: 5px;
+}
+
+/*Score Panel and Result Panel End--------------------------------------*/
+/*Result Panel Style Start-----------------------------------------------*/
+/*
+ * Styles for the Score Panel on pop-up window
+ */
+.result-panel {
+  position: absolute;
+  font-size: 1.2em;
+  width: 90vw;
+  max-width: 400px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+  border-radius: 10px;
+  border: 15px inset hsl(59, 96%, 50%);
+  -webkit-animation: swirl 2s ease-out;
+  animation: swirl 2s ease-out;
+}
+
+@-webkit-keyframes swirl {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg) scale(0.1);
+    transform: translate(-50%, -50%) rotate(360deg) scale(0.1);
+  }
+  60% {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(1.2);
+    transform: translate(-50%, -50%) rotate(0) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(1);
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+  }
+}
+@keyframes swirl {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg) scale(0.1);
+    transform: translate(-50%, -50%) rotate(360deg) scale(0.1);
+  }
+  60% {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(1.2);
+    transform: translate(-50%, -50%) rotate(0) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(1);
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+  }
+}
+
+/*Style for all the direct child elements of the result panel*/
+.result-panel > * {
+  padding: 10px 0;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#02750a+0,1dc61d+17,33af33+33,008a00+67,005700+83,002400+100 */
+  background: #02750a; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #02750a 0%,
+    #1dc61d 17%,
+    #33af33 33%,
+    #008a00 67%,
+    #005700 83%,
+    #002400 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #02750a 0%,
+    #1dc61d 17%,
+    #33af33 33%,
+    #008a00 67%,
+    #005700 83%,
+    #002400 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #02750a 0%,
+    #1dc61d 17%,
+    #33af33 33%,
+    #008a00 67%,
+    #005700 83%,
+    #002400 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02750a', endColorstr='#002400',GradientType=0 ); /* IE6-9 */
+}
+
+.result-message,
+.result-restart {
+  text-align: center;
+}
+
+.result-message {
+  font-size: 2em;
+  font-weight: 800;
+  padding: 20px 10px;
+  text-transform: uppercase;
+
+  border-bottom: 2px solid green;
+}
+
+.result-label {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  padding-right: 30px;
+}
+/*Result Panel Style End-----------------------------------------------*/
+/*Media query style start-----------------------------------------------*/
+@media only screen and (max-width: 410px) {
+  .deck {
+    -webkit-box-shadow: 2px 3px 5px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 2px 3px 5px 0 rgba(46, 61, 73, 0.5);
+  }
+
+  .title {
+    font-size: 2.5em;
+  }
+
+  .score-panel {
+    border-top: 1px solid #cdcdcd;
+    padding-bottom: 20px;
+  }
+
+  .score-panel > * {
+    padding: 10px 0;
+  }
+
+  .score-panel .restart {
+    -webkit-box-ordinal-group: 1000;
+    -ms-flex-order: 999;
+    order: 999;
+    width: 100%;
+    background-color: rebeccapurple;
+    color: white;
+    font-weight: 400;
+    margin: 0 20px;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 1px 1px #1c1f25;
+    box-shadow: 1px 1px 1px 1px #1c1f25;
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matching Game</title>
+    <meta name="description" content="Matching Game by Sarah Wang" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link
+      rel="stylesheet prefetch"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Coda:400,800"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="container flex flex-center">
+      <header>
+        <h1 class="title">Matching Game</h1>
+      </header>
+
+      <section class="score-panel flex">
+        <div class="sound-control flex flex-center cursor-pointer">
+          <i class="fa fa-volume-up"></i>
+        </div>
+        <div class="moves-panel">
+          <ul class="stars"></ul>
+          <span class="moves">3</span> Moves
+        </div>
+        <div class="time-lapse">
+          00:00:00
+        </div>
+        <div class="restart"><i class="fa fa-repeat"></i> Restart</div>
+      </section>
+
+      <ul class="deck flex flex-center"></ul>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
