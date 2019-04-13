@@ -20,13 +20,22 @@
   <body>
     <div class="container flex flex-center">
       <header>
-        <h1 class="title">Matching Game</h1>
+        <h1 class="title">
+          Matching Game<span class="invisible"
+            >The game is playable by using mouse or keyboard. With keyboard
+            playing, please use tab key, arrow key to move focus and enter key
+            to activate the click event</span
+          >
+        </h1>
       </header>
 
       <section class="score-panel flex">
-        <div class="sound-control flex flex-center cursor-pointer">
+        <button
+          class="sound-control flex flex-center cursor-pointer control-button"
+          aria-label="Sound Control Button: toggle this button by mouse clicking or pressing enter key on keyboard"
+        >
           <i class="fa fa-volume-up"></i>
-        </div>
+        </button>
         <div class="moves-panel">
           <ul class="stars"></ul>
           <span class="moves">3</span> Moves
@@ -34,7 +43,12 @@
         <div class="time-lapse">
           00:00:00
         </div>
-        <div class="restart"><i class="fa fa-repeat"></i> Restart</div>
+        <button
+          class="restart control-button"
+          aria-label="Restart Button: Restart the game by mouse clicking or pressing enter key on keyboard"
+        >
+          <i class="fa fa-repeat"></i> Restart
+        </button>
       </section>
 
       <ul class="deck flex flex-center"></ul>

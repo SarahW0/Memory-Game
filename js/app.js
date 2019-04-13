@@ -2,7 +2,10 @@
  * @description The Javascript file for the Matching Game
  *
  * @author Sarah Wang
- * @version 1.0.0
+ * @version 1.1.0
+ * update 1.0.0->1.1.0
+ *    -Add keyboard support to the sound control and restart elements
+ *    -Add accessibility support for screen reader
  */
 /*Global Variation Declaration Start------------------------------------------------------------------------------------------ */
 /**
@@ -73,7 +76,7 @@ const loseAudio = new Audio("sound/lose.mp3");
 const winAudio = new Audio("sound/win.mp3");
 const backgroundAudio = new Audio("sound/KennyG-ForeverInLove-64.mp3");
 backgroundAudio.loop = true;
-backgroundAudio.volume = 0.5;
+backgroundAudio.volume = 0.1;
 
 /**
  * @global boolean value
@@ -635,6 +638,9 @@ function pauseAudio(audio) {
  * @param {Event} event - Click event
  */
 function onClickSound(event) {
+  //
+
+  if (event.type === "keydown" && event.keyCode !== 13) return;
   //toggle the audio enabled variable
   audioEnabled = !audioEnabled;
 
@@ -647,6 +653,8 @@ function onClickSound(event) {
     soundElement.innerHTML = '<i class="fa fa-volume-off"></i>';
     pauseAudio(backgroundAudio);
   }
+  //stop event bubbling
+  event.stopPropagation();
 }
 /*Audio Functions Ends------------------------------------------------------------------------------------------------------- */
 /*App Start------------------------------------------------------------------------------------------------------------------ */

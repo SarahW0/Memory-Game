@@ -67,6 +67,15 @@ header {
   text-align: center;
 }
 
+/*Invisible infor on UI
+* The information for screen reader
+*/
+.invisible {
+  position: absolute;
+  left: -999em;
+  top: 0;
+  height: 0;
+}
 /*Card Style Start-----------------------------------------------*/
 /*
  * Styles for the deck of cards
@@ -199,6 +208,15 @@ header {
 /*time passed*/
 .time-lapse {
   width: 80px;
+}
+
+/*
+* Remove Button default style
+*/
+.control-button {
+  background: transparent;
+  border: none;
+  color: rebeccapurple;
 }
 /*Score Panel Style End--------------------------------------*/
 /*Score Panel and Result Panel Style Start-------------------*/
