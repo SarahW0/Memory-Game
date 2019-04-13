@@ -13,7 +13,7 @@ The 2nd project built for Udacity FRONT END Developer course
 3. Keyboard Support
    * Tab key: Set the focus on the first card and move the focus to the next card
    * Arrow key: 4 arrow keys to move the focus around
-   * Enter key: Flip the currently focused card over or restart game when the result window is showing. Same effect as mouse click.
+   * Enter key: Flip the currently focused card over or restart game when the result window is showing. Same effect as mouse click.   
    
 4. Store and reload game state using the local storage
 
@@ -28,5 +28,12 @@ Tested in Chrome, FireFox, IE edge and IE11
 
 # Comment
 If autoplay is not activated in Chrome or Firefox browser, the error message will be printed out in console. But the game is still playable.
+
+# Updates V1.0.0 => V1.1.0
+-Add keyboard support to the sound control and restart button elements
+   * Using TAB key to set focus on element and use ENTER key to trigger the button
+-Add accessibility support for screen reader to explain how to play the game
+   * Add hidden instructions to the header element
+   * Add aria-label attribute to the sound control and restart button elements
 
 
