@@ -30,9 +30,10 @@ Tested in Chrome, FireFox, IE edge and IE11
 If autoplay is not activated in Chrome or Firefox browser, the error message will be printed out in console. But the game is still playable.
 
 # Updates V1.0.0 => V1.1.0
--Add keyboard support to the sound control and restart button elements
+1. Add keyboard support to the sound control and restart button elements
    * Using TAB key to set focus on element and use ENTER key to trigger the button
--Add accessibility support for screen reader to explain how to play the game
+
+2. Add accessibility support for screen reader to explain how to play the game
    * Add hidden instructions to the header element
    * Add aria-label attribute to the sound control and restart button elements
 
