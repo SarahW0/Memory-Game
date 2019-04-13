@@ -217,6 +217,7 @@ header {
   background: transparent;
   border: none;
   color: rebeccapurple;
+  font: inherit;
 }
 /*Score Panel Style End--------------------------------------*/
 /*Score Panel and Result Panel Style Start-------------------*/
