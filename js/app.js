@@ -6,7 +6,10 @@
  * update 1.0.0->1.1.0
  *    -Add keyboard support to the sound control and restart elements
  *    -Add accessibility support for screen reader
+ * update 1.1.0->1.1.1
+ *    -Add IIFE design pattern to avoid polluting the global namespace
  */
+(function(){
 /*Global Variation Declaration Start------------------------------------------------------------------------------------------ */
 /**
  * @global Array of all cards' symbols
@@ -760,3 +763,4 @@ window.addEventListener("keydown", onSetCardFocus);
 
 //Start the game
 init();
+}());
