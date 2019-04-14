@@ -37,4 +37,5 @@ If autoplay is not activated in Chrome or Firefox browser, the error message wil
    * Add hidden instructions to the header element
    * Add aria-label attribute to the sound control and restart button elements
 
-
+# Updates V1.1.0 => V1.1.1
+Add IIFE design pattern in JavaScript code to avoid polluting the global namespace
